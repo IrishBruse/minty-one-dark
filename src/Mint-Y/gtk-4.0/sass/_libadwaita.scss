@@ -1,0 +1,915 @@
+
+
+$circular_radius: 9999px;
+$primary_color:                     $selected_bg_color;
+$light_fg_color:                    white;
+$dialog_bg_color:                   if($variant == 'light', $bg_color, $base_color);
+$menu_bg:                           if($variant == 'light', $base_color, $bg_color);
+$container_padding: 8px;
+$disabled_opacity: 0.45;
+$fill_color:                        if($variant == 'light', rgba(black, 0.06), rgba(white, 0.05));
+$bt_radius: 6px;
+// WM colors
+$wm_outline_light:                  0 0 0 2px rgba(black, 0.03), 0 0 0 1px rgba(black, 0.12);
+$wm_outline_dark:                   0 0 0 2px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.75);
+$wm_shadow:                         if($variant=='light', rgba(black, 0.15), rgba(black, 0.35));
+$wm_shadow_backdrop:                if($variant=='light', rgba(black, 0.08), rgba(black, 0.15));
+$wm_outline:                        if($variant=='light', $wm_outline_light, $wm_outline_dark);
+$highlight_color:                   if($variant == 'light', rgba(white, 0.15), rgba(white, 0.1));
+$light_borders_color:               if($variant == 'light', rgba(black, 0.08), rgba(white, 0.10));
+$menuitem_size: 28px;
+$monterey : false;
+$small_size: 20px;
+
+$blue_1: #99c1f1;
+$blue_2: #62a0ea;
+$blue_3: #3584e4;
+$blue_4: #1c71d8;
+$blue_5: #1a5fb4;
+$green_1: #8ff0a4;
+$green_2: #57e389;
+$green_3: #33d17a;
+$green_4: #2ec27e;
+$green_5: #26a269;
+$yellow_1: #f9f06b;
+$yellow_2: #f8e45c;
+$yellow_3: #f6d32d;
+$yellow_4: #f5c211;
+$yellow_5: #e5a50a;
+$orange_1: #ffbe6f;
+$orange_2: #ffa348;
+$orange_3: #ff7800;
+$orange_4: #e66100;
+$orange_5: #c64600;
+$red_1: #f66151;
+$red_2: #ed333b;
+$red_3: #e01b24;
+$red_4: #c01c28;
+$red_5: #a51d2d;
+$purple_1: #dc8add;
+$purple_2: #c061cb;
+$purple_3: #9141ac;
+$purple_4: #813d9c;
+$purple_5: #613583;
+$brown_1: #cdab8f;
+$brown_2: #b5835a;
+$brown_3: #986a44;
+$brown_4: #865e3c;
+$brown_5: #63452c;
+$light_1: #ffffff;
+$light_2: #f6f5f4;
+$light_3: #deddda;
+$light_4: #c0bfbc;
+$light_5: #9a9996;
+$dark_1: #77767b;
+$dark_2: #5e5c64;
+$dark_3: #3d3846;
+$dark_4: #241f31;
+$dark_5: #000000;
+
+// Sass thinks we're using the colors in the variables as strings and may shoot
+// warning, it's innocuous and can be defeated by using #{$var}.
+
+@define-color blue_1 #{$blue_1};
+@define-color blue_2 #{$blue_2};
+@define-color blue_3 #{$blue_3};
+@define-color blue_4 #{$blue_4};
+@define-color blue_5 #{$blue_5};
+@define-color green_1 #{$green_1};
+@define-color green_2 #{$green_2};
+@define-color green_3 #{$green_3};
+@define-color green_4 #{$green_4};
+@define-color green_5 #{$green_5};
+@define-color yellow_1 #{$yellow_1};
+@define-color yellow_2 #{$yellow_2};
+@define-color yellow_3 #{$yellow_3};
+@define-color yellow_4 #{$yellow_4};
+@define-color yellow_5 #{$yellow_5};
+@define-color orange_1 #{$orange_1};
+@define-color orange_2 #{$orange_2};
+@define-color orange_3 #{$orange_3};
+@define-color orange_4 #{$orange_4};
+@define-color orange_5 #{$orange_5};
+@define-color red_1 #{$red_1};
+@define-color red_2 #{$red_2};
+@define-color red_3 #{$red_3};
+@define-color red_4 #{$red_4};
+@define-color red_5 #{$red_5};
+@define-color purple_1 #{$purple_1};
+@define-color purple_2 #{$purple_2};
+@define-color purple_3 #{$purple_3};
+@define-color purple_4 #{$purple_4};
+@define-color purple_5 #{$purple_5};
+@define-color brown_1 #{$brown_1};
+@define-color brown_2 #{$brown_2};
+@define-color brown_3 #{$brown_3};
+@define-color brown_4 #{$brown_4};
+@define-color brown_5 #{$brown_5};
+@define-color light_1 #{$light_1};
+@define-color light_2 #{$light_2};
+@define-color light_3 #{$light_3};
+@define-color light_4 #{$light_4};
+@define-color light_5 #{$light_5};
+@define-color dark_1 #{$dark_1};
+@define-color dark_2 #{$dark_2};
+@define-color dark_3 #{$dark_3};
+@define-color dark_4 #{$dark_4};
+@define-color dark_5 #{$dark_5};
+
+/* GTK NAMED COLORS
+   ----------------
+   use responsibly! */
+
+// Sass thinks we're using the colors in the variables as strings and may shoot
+// warning, it's innocuous and can be defeated by using #{$var}.
+
+// These are the colors apps are can override. We define the defaults here and
+// define variables for them in _colors.scss
+
+// The main accent color and the matching text value
+@define-color accent_bg_color #{$primary_color};
+@define-color accent_fg_color #{$light_fg_color};
+@define-color accent_color #{$primary_color};
+
+// destructive-action buttons
+@define-color destructive_bg_color #{$destructive_color};
+@define-color destructive_fg_color #{$light_fg_color};
+@define-color destructive_color #{$destructive_color};
+
+// Levelbars, entries, labels and infobars. These don't need text colors
+@define-color success_bg_color #{$success_color};
+@define-color success_fg_color #{$light_fg_color};
+@define-color success_color #{$success_color};
+
+@define-color warning_bg_color #{$warning_color};
+@define-color warning_fg_color #{$light_fg_color};
+@define-color warning_color #{$warning_color};
+
+@define-color error_bg_color #{$error_color};
+@define-color error_fg_color #{$light_fg_color};
+@define-color error_color #{$error_color};
+
+// Window
+@define-color window_bg_color #{$bg_color};
+@define-color window_fg_color #{$text_color};
+
+// Views - e.g. text view or tree view
+@define-color view_bg_color #{$base_color};
+@define-color view_fg_color #{$text_color};
+
+// Header bar, search bar, tab bar
+@define-color headerbar_bg_color #{$header_bg};
+@define-color headerbar_fg_color #{$header_fg};
+@define-color headerbar_border_color #{$borders_color};
+@define-color headerbar_backdrop_color #{$header_bg_backdrop};
+@define-color headerbar_shade_color #{$header_border};
+
+// Cards, boxed lists
+@define-color card_bg_color #{$base_color};
+@define-color card_fg_color #{$text_color};
+@define-color card_shade_color #{$borders_color};
+
+// Dialogs
+@define-color dialog_bg_color #{$dialog_bg_color};
+@define-color dialog_fg_color #{$text_color};
+
+// Popovers
+@define-color popover_bg_color #{$menu_bg};
+@define-color popover_fg_color #{$text_color};
+
+// Miscellaneous
+@define-color shade_color #{$borders_color};
+@define-color scrollbar_outline_color #{$borders_color};
+
+
+//
+// avatar
+//
+
+avatar {
+  border-radius: $circular_radius;
+  font-weight: bold;
+
+  // The list of colors to generate avatars.
+  // Each avatar color is represented by a font color, a gradient start color and a gradient stop color.
+  // There are 8 different colors for avtars in the list if you change the number of them you
+  // need to update the NUMBER_OF_COLORS in src/adw-avatar.c.
+  // The 2D list has this form: ((font-color, gradient-top-color, gradient-bottom-color)).
+  $avatarcolorlist: (
+   (#cfe1f5, #83b6ec, #337fdc), // blue
+   (#caeaf2, #7ad9f1, #0f9ac8), // cyan
+   (#cef8d8, #8de6b1, #29ae74), // green
+   (#e6f9d7, #b5e98a, #6ab85b), // lime
+   (#f9f4e1, #f8e359, #d29d09), // yellow
+   (#ffead1, #ffcb62, #d68400), // gold
+   (#ffe5c5, #ffa95a, #ed5b00), // orange
+   (#f8d2ce, #f78773, #e62d42), // raspberry
+   (#fac7de, #e973ab, #e33b6a), // magenta
+   (#e7c2e8, #cb78d4, #9945b5), // purple
+   (#d5d2f5, #9e91e8, #7a59ca), // violet
+   (#f2eade, #e3cf9c, #b08952), // beige
+   (#e5d6ca, #be916d, #785336), // brown
+   (#d8d7d3, #c0bfbc, #6e6d71), // gray
+  );
+
+  @for $i from 1 through length($avatarcolorlist) {
+    &.color#{$i} {
+      $avatarcolor: nth($avatarcolorlist, $i);
+      background-image: linear-gradient(nth($avatarcolor, 2), nth($avatarcolor, 3));
+      color: nth($avatarcolor, 1);
+    }
+  }
+
+  &.contrasted { color: white; }
+
+  &.image { background: none; }
+}
+
+//
+// preferencespage
+//
+
+preferencespage > scrolledwindow > viewport > clamp > box {
+  margin: 24px 12px;
+  border-spacing: 24px;
+}
+
+preferencesgroup > box {
+  &, .labels {
+    border-spacing: $container_padding;
+  }
+
+  > box.header:not(.single-line) {
+    margin-bottom: $container_padding;
+  }
+
+  > box.single-line {
+    min-height: 34px;
+  }
+}
+
+//
+// AdwStatusPage
+//
+
+statuspage {
+  > scrolledwindow > viewport > box {
+    margin: 36px $container_padding * 2;
+    border-spacing: 36px;
+
+    > clamp > box {
+      border-spacing: $container_padding * 2;
+
+      > .icon {
+        -gtk-icon-size: 128px;
+
+        color: gtkalpha(currentColor, 0.55);
+
+        &:disabled {
+          opacity: $disabled_opacity;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+
+  &.compact > scrolledwindow > viewport > box {
+    margin: 24px 12px;
+    border-spacing: 24px;
+
+    > clamp > box {
+      > .icon {
+        -gtk-icon-size: 96px;
+
+        &:not(:last-child) {
+          margin-bottom: $container_padding * 2;
+        }
+      }
+
+      > .title {
+        font-size: 18pt;
+      }
+    }
+  }
+}
+
+
+//
+// Cards
+//
+
+.card {
+  @at-root %card, & {
+    //@extend %circular_list;
+
+    .osd &, &.osd {
+      background-color: gtkalpha(currentColor, .1);
+      color: inherit;
+      box-shadow: none;
+    }
+  }
+
+  .osd &, &.osd {
+    &:focus:focus-visible {
+      outline-color: $fill_color;
+    }
+  }
+
+  &.activatable {
+    transition: $button_transition;
+
+    &:hover {
+      background-image: image(gtkalpha(currentColor, .03));
+    }
+
+    &:active {
+      background-image: image(gtkalpha(currentColor, .08));
+    }
+  }
+}
+
+//
+// Toasts
+//
+
+toast {
+  @extend %osd;
+  margin: $container_padding * 2;
+  margin-bottom: $container_padding * 3;
+  border-radius: $circular_radius;
+  border-spacing: $container_padding;
+  padding: $container_padding;
+  box-shadow: 0 3px 8px rgba(black, 0.35), $wm_outline;
+  outline: 1px solid $highlight_color;
+  outline-offset: -1px;
+
+  &:dir(ltr) { padding-left: $container_padding * 2; }
+  &:dir(rtl) { padding-right: $container_padding * 2; }
+
+  //button { @extend %osd_button; }
+
+  > widget {
+    margin: 0 $container_padding;
+  }
+}
+
+//
+// viewswitcher
+//
+
+viewswitcher {
+  margin: 0;
+
+  &.wide {
+    border-spacing: 0;
+
+    > button.toggle {
+      margin: 8px 0;
+    }
+  }
+
+  &.narrow > button.toggle {
+    border-radius: 0;
+    margin: 0;
+  }
+
+  > button.toggle {
+    font-weight: normal;
+    padding: 0;
+
+    > stack > box {
+      &.narrow {
+        font-size: 0.75rem;
+        padding-top: $container_padding;
+        padding-bottom: $container_padding;
+        border-spacing: 0;
+
+        > stack > label {
+          padding-left: $container_padding + 2px;
+          padding-right: $container_padding + 2px;
+        }
+      }
+
+      &.wide {
+        padding: 0 $container_padding * 2;
+        border-spacing: 0;
+
+        > label, > indicatorbin > image {
+          padding-left: $container_padding / 2;
+          padding-right: $container_padding / 2;
+        }
+      }
+    }
+  }
+}
+
+// AdwViewSwitcherBar
+
+viewswitcherbar actionbar > revealer > box {
+  padding: 0;
+}
+
+// AdwViewSwitcherTitle
+viewswitchertitle {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  viewswitcher {
+    margin-left: $container_padding * 2;
+    margin-right: $container_padding * 2;
+
+    &.narrow {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      button.toggle {
+        > stack > box {
+          &.narrow {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-spacing: 0;
+          }
+        }
+      }
+    }
+
+    &.wide {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  windowtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+// AdwIndicatorBin
+indicatorbin {
+  > indicator, > mask {
+    min-width: $container_padding * 2;
+    min-height: $container_padding * 2;
+    border-radius: $circular_radius;
+  }
+
+  > indicator {
+    margin: 1px;
+    background: gtkalpha(currentColor, .4);
+
+    > label {
+      font-size: 0.6rem;
+      font-weight: normal;
+      padding: 1px 4px;
+      color: white;
+    }
+  }
+
+  > mask {
+    padding: 0;
+    background: black;
+  }
+
+  &.needs-attention > indicator {
+    background: $selected_bg_color;
+
+    > label { color: $selected_fg_color; }
+  }
+}
+
+headerbar > windowhandle > box viewswitcher.wide {
+  box-shadow: inset 0 0 0 1px $light_borders_color;
+  border-radius: $bt_radius;
+  padding: 0;
+  margin: 8px 0;
+
+  > button.toggle {
+    margin: 0;
+    font-weight: 500;
+    border-radius: $bt_radius;
+
+    &:not(:first-child) {
+      border-width: 0 0 0 1px;
+      border-style: none solid none none;
+      border-image: linear-gradient(to bottom,
+                                    transparent 16%,
+                                    $light_borders_color 16%,
+                                    $light_borders_color 84%,
+                                    transparent 84%) 0 0 0 1 / 0 0 0 1px stretch;
+    }
+
+    &:hover, &:active, &:checked {
+      border-image: none;
+
+      & + button { border-image: none; }
+    }
+  }
+}
+
+
+//
+// Tab View
+//
+
+tabbar {
+  .box {
+    min-height: $menuitem_size;
+  }
+
+  .start-action,
+  .end-action {
+    padding: $container_padding;
+  }
+
+  .start-action:dir(ltr),
+  .end-action:dir(rtl) {
+    padding-right: 0;
+  }
+
+  .start-action:dir(rtl),
+  .end-action:dir(ltr) {
+    padding-left: 0;
+  }
+
+  &:not(.inline) {
+    .box {
+      color: $text_color;
+      margin: 0;
+
+      @if $monterey == 'false' {
+        padding: 0;
+        box-shadow: inset 0 -1px if($variant == 'light', darken($header_bg, 15%), lighten($header_bg, 5%));
+        border-bottom: none;
+        background-color: darken($header_bg, 10%);
+      } @else {
+        box-shadow: none;
+        border-bottom: 1px solid $borders_color;
+        padding: $container_padding / 2 0;
+        background-color: $header_bg;
+      }
+    }
+
+    &:backdrop .box {
+      > scrolledwindow,
+      > .start-action,
+      > .end-action {
+        filter: opacity(0.5);
+      }
+    }
+  }
+
+  tabbox {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+
+    > separator {
+      margin: 0;
+      background-color: $borders_color;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    > revealer > indicator {
+      min-width: 2px;
+      border-radius: 2px;
+      background: gtkalpha($selected_bg_color, 0.5);
+    }
+
+    > tabboxchild {
+      border-radius: 0;
+      margin: 0;
+
+      @if $monterey == 'false' {
+        &:first-child > tab {
+          border-left: none;
+        }
+
+        &:last-child > tab {
+          border-right: none;
+        }
+      }
+    }
+
+    > tab,
+    > tabboxchild > tab {
+      @if $monterey == 'false' {
+        @extend %tabs_tab;
+        border-top: none;
+      } @else {
+        //@extend %monterey_tab;
+      }
+
+      button.tab-close-button {
+        border-radius: 3px;
+        border: none;
+        padding: 0;
+        margin-right: -$container_padding / 2;
+        //@extend %flat_button;
+
+        @if $monterey == 'false' {
+          min-height: $small_size;
+          min-width: $small_size;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        } @else {
+          min-height: 16px;
+          min-width: 16px;
+          margin-top: 4px;
+          margin-bottom: 4px;
+        }
+
+        &:hover {
+          color: $fg_color;
+          background-color: rgba($borders_color, 0.1);
+        }
+
+        &:active, &:active:hover {
+          color: if($variant == 'light', darken($fg_color, 10%), lighten($fg_color, 10%));
+          background-color: rgba($borders_color, 0.2);
+        }
+      }
+    }
+  }
+
+  scrolledwindow:not(.pinned) {
+    tabbox > tabboxchild {
+      @if $monterey == 'false' {
+        margin: 0 -3px;
+      } @else {
+        margin: 0;
+      }
+    }
+  }
+}
+
+dnd tab {
+  background-color: $base_color;
+  color: $text_color;
+  box-shadow: none;
+  margin: $container_padding * 4;
+}
+
+tabbar,
+dnd {
+  tab {
+    margin: 0;
+
+    @if $monterey == 'false' {
+      @extend %tabs_tab;
+    } @else {
+      //@extend %monterey_tab;
+    }
+
+    button.tab-close-button {
+      border-radius: 3px;
+      min-height: $small_size;
+      min-width: $small_size;
+      padding: 0;
+    }
+
+    indicator {
+      min-height: 2px;
+      border-radius: 2px;
+      background: gtkalpha($selected_bg_color, 0.5);
+    }
+  }
+}
+
+tabview:drop(active),
+tabbox:drop(active) {
+  box-shadow: none;
+}
+
+// Transition shadows
+flap,
+leaflet,
+navigation-view,
+overlay-split-view {
+  //@include transition-shadows($dark_borders_color);
+}
+
+toolbarview.undershoot-top scrolledwindow {
+  //@include undershoot(top);
+}
+
+toolbarview.undershoot-bottom scrolledwindow {
+  //@include undershoot(bottom);
+}
+
+// Sidebar
+.unfolded stacksidebar.sidebar { border: none; }
+
+.sidebar-pane {
+  background-color: $dark_sidebar_bg;
+  color: $dark_sidebar_fg;
+
+  &:backdrop {
+    background-color: $dark_sidebar_bg;
+    // transition: background-color $longer_duration $deceleration_curve;
+  }
+
+  .sidebar,
+  .toolbar,
+  headerbar,
+  .navigation-sidebar,
+  searchbar > revealer > box {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  .toolbar {
+    padding: $container_padding $container_padding * 2;
+  }
+
+  list.navigation-sidebar:not(.view) {
+    padding: $container_padding * 2;
+
+    > row {
+      &:selected {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
+    }
+  }
+
+  toolbarview.undershoot-top scrolledwindow {
+    //@include undershoot(top, $style: 'compact');
+  }
+
+  toolbarview.undershoot-bottom scrolledwindow {
+    //@include undershoot(bottom, $style: 'compact');
+  }
+
+  scrolledwindow {
+    &.undershoot-top {
+      //@include undershoot(top, $style: 'compact');
+    }
+
+    &.undershoot-bottom {
+      //@include undershoot(bottom, $style: 'compact');
+    }
+
+    &.undershoot-start {
+      //&:dir(ltr) { @include undershoot(left, $style: 'compact'); }
+      //&:dir(rtl) { @include undershoot(right, $style: 'compact'); }
+    }
+
+    &.undershoot-end {
+      //&:dir(ltr) { @include undershoot(right, $style: 'compact'); }
+      //&:dir(rtl) { @include undershoot(left, $style: 'compact'); }
+    }
+  }
+
+  flap,
+  leaflet,
+  navigation-view,
+  overlay-split-view {
+    //@include transition-shadows($dark_borders_color);
+  }
+
+  banner > revealer > widget {
+    background-color: gtkmix($selected_bg_color, $dark_sidebar_bg, 30%);
+    color: $text_color;
+
+    &:backdrop {
+      background-color: gtkmix($selected_bg_color, $dark_sidebar_bg, 30%);
+    }
+  }
+
+  &:dir(ltr), &.end:dir(rtl) {
+    &, banner > revealer > widget {
+      box-shadow: inset -1px 0 6px rgba(black, if($variant == 'light', 0.04, 0.08));
+      border-right: 1px solid $dark_sidebar_border;
+    }
+  }
+
+  &:dir(rtl), &.end:dir(ltr) {
+    &, banner > revealer > widget {
+      box-shadow: inset 1px 0 6px rgba(black, if($variant == 'light', 0.04, 0.08));
+      border-left: 1px solid $dark_sidebar_border;
+    }
+  }
+}
+
+/* Middle pane in three-pane setups */
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane {
+  background-color: $base_color;
+  color: $text_color;
+
+  &:backdrop {
+    background-color: $base_color;
+    // transition: background-color $longer_duration $deceleration_curve;
+  }
+
+  toolbarview.undershoot-top scrolledwindow {
+    //@include undershoot(top, $style: 'compact');
+  }
+
+  toolbarview.undershoot-bottom scrolledwindow {
+    //@include undershoot(bottom, $style: 'compact');
+  }
+
+  scrolledwindow {
+    &.undershoot-top {
+      //@include undershoot(top, $style: 'compact');
+    }
+
+    &.undershoot-bottom {
+     // @include undershoot(bottom, $style: 'compact');
+    }
+
+    &.undershoot-start {
+      //&:dir(ltr) { @include undershoot(left, $style: 'compact'); }
+      //&:dir(rtl) { @include undershoot(right, $style: 'compact'); }
+    }
+
+    &.undershoot-end {
+      //&:dir(ltr) { @include undershoot(right, $style: 'compact'); }
+      //&:dir(rtl) { @include undershoot(left, $style: 'compact'); }
+    }
+  }
+
+  flap,
+  leaflet,
+  navigation-view,
+  overlay-split-view {
+    //@include transition-shadows($dark_borders_color);
+  }
+
+  banner > revealer > widget {
+    background-color: gtkmix($selected_bg_color, $base_color, 30%);
+    color: $text_color;
+
+    &:backdrop {
+      background-color: gtkmix($selected_bg_color, $base_color, 30%);
+    }
+  }
+
+  &:dir(ltr), &.end:dir(rtl) {
+    &, banner > revealer > widget {
+      box-shadow: inset -1px 0 6px rgba(black, if($variant == 'light', 0.04, 0.08));
+      border-right: 1px solid $dark_sidebar_border;
+    }
+  }
+
+  &:dir(rtl), &.end:dir(ltr) {
+    &, banner > revealer > widget {
+      box-shadow: inset 1px 0 6px rgba(black, if($variant == 'light', 0.04, 0.08));
+      border-left: 1px solid $dark_sidebar_border;
+    }
+  }
+}
+
+.sidebar-pane .sidebar-pane {
+  background-color: transparent;
+  color: inherit;
+}
+
+.content-pane {
+  background-color: $base_color;
+
+  toolbarview {
+    &, &.view {
+      background-color: transparent;
+    }
+
+    > stack, > box > stack.view {
+      background-color: transparent;
+    }
+  }
+
+  notebook > stack box > switch {
+    margin: 14px 0;
+  }
+
+  list.background {
+    background-color: transparent;
+  }
+}
+
+// Gnome >= 45.0
+.sidebar-pane,
+.content-pane {
+  headerbar {
+    &, &:backdrop {
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+    }
+  }
+}
+
+.top-bar {
+  .collapse-spacing {
+    padding: 0;
+  }
+}
