@@ -12,3 +12,9 @@ debian/.debhelper/
 debian/files
 debian/mint-themes/
 /usr/
+src/Mint-Y/cinnamon/cinnamon-dark.css
+src/Mint-Y/cinnamon/cinnamon.css
+src/Mint-Y/gtk-3.0/gtk-dark.css
+src/Mint-Y/gtk-3.0/gtk.css
+src/Mint-Y/gtk-4.0/gtk-dark.css
+src/Mint-Y/gtk-4.0/gtk.css
