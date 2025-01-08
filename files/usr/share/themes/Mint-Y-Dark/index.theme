@@ -1,12 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Mint-Y-Dark
+Name=OneDark
 Comment=A flat theme with transparent elements
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Mint-Y-Dark
-MetacityTheme=Mint-Y
-IconTheme=Mint-Y
-CursorTheme=Bibata-Modern-Classic
+GtkTheme=OneDark
+MetacityTheme=OneDark
+IconTheme=OneDark
 ButtonLayout=:minimize,maximize,close

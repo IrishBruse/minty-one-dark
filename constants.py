@@ -31,35 +31,35 @@ x_rgb_colors["Teal"] = "90, 170, 154"
 
 
 # Mint-Y
-Y_HEX_ACCENT1 = ["#35a854"]  # BASE
-Y_HEX_ACCENT2 = ["#35a854"]  # DARK
+Y_HEX_ACCENT1 = ["#ff00ff"]  # BASE
+Y_HEX_ACCENT2 = ["#ff00ff"]  # DARK
 
 y_hex_colors1 = {}
 y_hex_colors2 = {}
 
-y_hex_colors1["Aqua"] = "#1f9ede"
-y_hex_colors2["Aqua"] = "#1f9ede"
+# y_hex_colors1["Aqua"] = "#1f9ede"
+# y_hex_colors2["Aqua"] = "#1f9ede"
 
-y_hex_colors1["Blue"] = "#0c75de"
-y_hex_colors2["Blue"] = "#0c75de"
+# y_hex_colors1["Blue"] = "#0c75de"
+# y_hex_colors2["Blue"] = "#0c75de"
 
-y_hex_colors1["Grey"] = "#70737a"
-y_hex_colors2["Grey"] = "#70737a"
+# y_hex_colors1["Grey"] = "#70737a"
+# y_hex_colors2["Grey"] = "#70737a"
 
-y_hex_colors1["Orange"] = "#ff7139"
-y_hex_colors2["Orange"] = "#ff7139"
+# y_hex_colors1["Orange"] = "#ff7139"
+# y_hex_colors2["Orange"] = "#ff7139"
 
-y_hex_colors1["Pink"] = "#e54980"
-y_hex_colors2["Pink"] = "#e54980"
+# y_hex_colors1["Pink"] = "#e54980"
+# y_hex_colors2["Pink"] = "#e54980"
 
-y_hex_colors1["Purple"] = "#8c5dd9"
-y_hex_colors2["Purple"] = "#8c5dd9"
+# y_hex_colors1["Purple"] = "#8c5dd9"
+# y_hex_colors2["Purple"] = "#8c5dd9"
 
-y_hex_colors1["Red"] = "#e82127"
-y_hex_colors2["Red"] = "#e82127"
+# y_hex_colors1["Red"] = "#e82127"
+# y_hex_colors2["Red"] = "#e82127"
 
-y_hex_colors1["Sand"] = "#c5a07c"
-y_hex_colors2["Sand"] = "#c5a07c"
+# y_hex_colors1["Sand"] = "#c5a07c"
+# y_hex_colors2["Sand"] = "#c5a07c"
 
-y_hex_colors1["Teal"] = "#199ca8"
-y_hex_colors2["Teal"] = "#199ca8"
+# y_hex_colors1["Teal"] = "#199ca8"
+# y_hex_colors2["Teal"] = "#199ca8"
