@@ -1,72 +1,76 @@
 // Global
-$od-text: #e1e1e1;
+$text: #e1e1e1;
 $od-bg-l: #272c33;
 $od-bg-d: #20252b;
 $od-accent: #00a65c;
 $od-shadow: #000a;
-$od-border: #383f4a;
+$border: #383f4a;
 
-$UNKNOWN: #ff1234;
 // Global
+
+// scrollbar
+$scrollbar: #4e5666;
+$scrollbar_hover: #5a6375;
+$scrollbar_active: #747d91;
 
 // General
 $accent_color: $od-accent;
-$radius: $UNKNOWN;
+$radius: 10px;
 
 // Panel
 $panel_bg: $od-bg-l;
-$panel_fg: $od-text;
+$panel_fg: $text;
 
 // Clutter background colors
-$bg_color: #20252b; // Taskbar top border
+$bg_color: $od-bg-l; // Taskbar top border
 // Tray Icons Hover Background and app item focus
 // cinnamenu scroll and hover bg
 $bg_color2: transparentize($od-accent, 0.8);
-$bg_color3: #0f0;
+$bg_color3: #123456; // Scrollbar color
 $bg_color4: #ff0;
 
 // Borders and separators
-$borders_color: $od-border;
-$menus_border_color: #272c33; // Window peek border color
+$borders_color: $border;
+$menus_border_color: #0000; // cinnamenu hover border
 $shadow_color: #000a;
-$separator_color: $UNKNOWN;
+$separator_color: $border;
 // Text
-$text_color: $od-text;
-$fg_color: $od-text;
-$noaccent_selected_fg_color: $od-text;
-$selected_fg_color: $od-text;
+$text_color: $text;
+$fg_color: $text;
+$noaccent_selected_fg_color: $text;
+$selected_fg_color: $text;
 
-$link_color: $UNKNOWN;
+$link_color: $od-accent;
 
 $warning_color: #cd9731;
 $error_color: #f44747;
-$destructive_color: $UNKNOWN;
-$osd_destructive_color: $UNKNOWN;
+$destructive_color: #d65737;
+$osd_destructive_color: #d65737;
 
-$insensitive_fg_color: #0f0;
+$insensitive_fg_color: transparentize($text, 0.3);
 
-$tooltip_bg_color: $UNKNOWN;
-$tooltip_fg_color: $UNKNOWN;
-$tooltip_border_color: $UNKNOWN;
+$tooltip_bg_color: #20252B;
+$tooltip_fg_color: $text;
+$tooltip_border_color: #f0f;
 
-$osd_fg_color: $UNKNOWN;
-$osd_bg_color: $UNKNOWN;
+$osd_fg_color: #ff00ff;
+$osd_bg_color: #ff00ff;
 
-$osd_button_bg: $UNKNOWN;
-$osd_button_border: $UNKNOWN;
+$osd_button_bg: #ff00ff;
+$osd_button_border: #ff00ff;
 
-$osd_entry_bg: $UNKNOWN;
-$osd_entry_border: $UNKNOWN;
+$osd_entry_bg: #ff00ff;
+$osd_entry_border: #ff00ff;
 
-$osd_insensitive_fg_color: $UNKNOWN;
+$osd_insensitive_fg_color: #ff00ff;
 
-$entry_bg: $UNKNOWN;
-$entry_border: $UNKNOWN;
+$entry_bg: $panel_bg;
+$entry_border: $border;
 
-$button_bg: $UNKNOWN;
-$button_border: $UNKNOWN;
+$button_bg: #ff00ff;
+$button_border: #f0f;
 
-$applet_separator_color: $UNKNOWN;
+$applet_separator_color: #ff00ff;
 
-$corner_bar_unhighlighted: $UNKNOWN;
-$corner_bar_highlighted: $UNKNOWN;
+$corner_bar_unhighlighted: #ff00ff;
+$corner_bar_highlighted: #ff00ff;
