@@ -113,13 +113,13 @@ StScrollBar {
 
   StButton#vhandle, StButton#hhandle {
     border-radius: 2px;
-    background-color: $bg_color2;
+    background-color: $scrollbar;
     border: 0px solid;
     margin: 0px;
 
-    &:hover { background-color: $bg_color3; }
+    &:hover { background-color: $scrollbar_hover; }
 
-    &:active { background-color: $accent_color; }
+    &:active { background-color: $scrollbar_active; }
   }
 }
 
@@ -362,7 +362,7 @@ StScrollBar {
   font-weight: normal;
 }
 
-.popup-device-menu-item { 
+.popup-device-menu-item {
   spacing: .5em;
 
   font-weight: bold;
@@ -1532,10 +1532,11 @@ StScrollBar {
 
   &-thumbnail-menu {
     color: $fg_color;
-    border: 1px solid $menus_border_color;
-    background-color: $bg_color;
+    // border: 1px solid $bg_color;
+    background-color: $bg_color;// peek bg
     border-radius: 3px;
     padding: 0px;
+    box-shadow: 0 0 6px $shadow_color;
 
     > StBoxLayout {
       padding: 4px;
@@ -1768,7 +1769,7 @@ $workspace_window_color: if($variant == 'light', black, white);
     padding-bottom: 2px;
     // border-bottom-width: 1px;
     transition-duration: 200;
-    &:hover { 
+    &:hover {
       background-color: $bg_color2;
     }
   }
