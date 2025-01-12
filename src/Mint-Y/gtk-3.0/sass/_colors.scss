@@ -1,105 +1,119 @@
 // Global
-$od_text: #e1e1e1;
+$text: #e1e1e1;
 $od-bg-d: #20252b;
-$od-bg-l: #272c33;
-$od_accent: #00a65c;
-$od_shadow: #000a;
+$od-accent: #00a65c;
+$od-shadow: #000a;
 
-$UNKNOWN: #ff1234;
 // Global
 
-$light_tint: $UNKNOWN;
+$light_tint: #ff00ff;
 $dark_tint: #ff00ff;
-$base_color: $od-bg-l;
+$base_color: #272c33;
 
-$text_color: $od_text;
+$text_color: $text;
 $bg_color: $od-bg-d;
 $fg_color: $text_color;
-$selected_bg_color: #ff00ff;
-$selected_fg_color: #ff00ff;
-$selected_borders_color: #ff00ff;
-$borders_color: #ff00ff;
-$separator_color: #ff00ff;
-$link_color: #ff00ff;
-$link_visited_color: #ff00ff;
-$selection_mode_bg: #ff00ff;
-$selection_mode_fg: #ff00ff;
-$warning_color: #ff00ff;
-$warning_fg_color: #ff00ff;
-$error_color: #ff00ff;
-$error_fg_color: #ff00ff;
-$success_color: #ff00ff;
-$destructive_color: #ff00ff;
-$suggested_color: #ff00ff;
-$question_color: #ff00ff;
-$drop_target_color: #ff00ff;
+
+$selected_bg_color: #35A854;
+$selected_fg_color: #fff;
+$selected_borders_color: #ff0000;
+$borders_color: #ff0000;
+$separator_color: #ff0000;
+$link_color: #ff0000;
+$link_visited_color: #ff0000;
+$selection_mode_bg: #ff0000;
+$selection_mode_fg: #ff0000;
+$warning_color: #ff0000;
+$warning_fg_color: #ff0000;
+$error_color: #ff0000;
+$error_fg_color: #ff0000;
+$success_color: #ff0000;
+$destructive_color: #ff0000;
+$suggested_color: #ff0000;
+$question_color: #ff0000;
+$drop_target_color: #ff0000;
+
 //insensitive state derived colors
-$insensitive_fg_color: #ff00ff;
-$insensitive_bg_color: #ff00ff;
-$dim_label_fg_color: #ff00ff;
-$header_bg: #00ff00;
-$header_bg_backdrop: #ff00ff;
-$header_border: #ff00ff;
-$header_highlight: #ff00ff;
-$header_fg: #ff00ff;
-$menu_selected_bg_color: #ff00ff;
-$dark_sidebar_bg: #ff00ff;
-$dark_sidebar_fg: #ff00ff;
-$dark_sidebar_border: #ff00ff;
-$filechooser_bg: #ff00ff;
-$tooltip_bg_color: #ff00ff;
-$tooltip_fg_color: #ff00ff;
-$osd_fg_color: #00ffff;
-$osd_bg_color: #00ffff;
-$osd_button_bg: #00ffff;
-$osd_button_border: #00ffff;
-$osd_entry_bg: #00ffff;
-$osd_entry_border: #00ffff;
-$osd_insensitive_bg_color: #00ffff;
-$osd_insensitive_fg_color: #00ffff;
-$osd_borders_color: #00ffff;
-$panel_bg: #ff00ff;
+$insensitive_fg_color: #ff0000;
+$insensitive_bg_color: #ff0000;
+$dim_label_fg_color: #ff0000;
+
+// Header
+$header_entry_bg: #242930;
+$header_entry_border: #383f4a;
+$header_bg: #20252B;
+$header_bg_backdrop: #0f0;
+$header_border: #00f;
+$header_highlight: #20252B;
+$header_fg: $text;
+$header_button_bg: #272C33;
+$header_button_border: #383f4a;
+
+$menu_selected_bg_color: #272C33;
+
+$dark_sidebar_bg: #ff0000;
+$dark_sidebar_fg: #ff0000;
+$dark_sidebar_border: #ff0000;
+
+$filechooser_bg: #ff0000;
+
+$tooltip_bg_color: #ff0000;
+$tooltip_fg_color: #ff0000;
+
+$osd_fg_color: #ff0000;
+$osd_bg_color: #ff0000;
+$osd_button_bg: #ff0000;
+$osd_button_border: #ff0000;
+$osd_entry_bg: #ff0000;
+$osd_entry_border: #ff0000;
+$osd_insensitive_bg_color: #ff0000;
+$osd_insensitive_fg_color: #ff0000;
+$osd_borders_color: #ff0000;
+
+$panel_bg: #ff0000;
 $panel_fg: #00a65c;
-$entry_bg: #ff00ff;
-$entry_border: #ff00ff;
-$header_entry_bg: #ff00ff;
-$header_entry_border: #ff00ff;
-$button_bg: #ff00ff;
-$button_border: #ff00ff;
-$button_active_bg: #ff00ff;
-$button_active_border: #ff00ff;
-$header_button_bg: #ff00ff;
-$header_button_border: #ff00ff;
-$trough_color_treeview: #ff00ff;
-$trough_color: #ff00ff;
+
+$entry_bg: #ff0000;
+$entry_border: #ff0000;
+
+$button_bg: #ff0000;
+$button_border: #ff0000;
+$button_active_bg: #ff0000;
+$button_active_border: #ff0000;
+
+$trough_color_treeview: #ff0000;
+$trough_color: #ff0000;
 
 // WM Colors
 
-$wm_title: #00ff00;
-$wm_title_unfocused: #00ff00;
-$wm_bg: #00ff00;
-$wm_bg_unfocused: #00ff00;
-$wm_highlight: #00ff00;
-$wm_border: #00ff00;
-$wm_border_unfocused: #00ff00;
+$wm_title: #ff0000;
+$wm_title_unfocused: #ff0000;
+$wm_bg: #ff0000;
+$wm_bg_unfocused: #ff0000;
+$wm_highlight: #ff0000;
+$wm_border: $bg_color;
+$wm_border_unfocused: $bg_color;
+
+$_wm_border: $wm_border;
+$_wm_border_backdrop: $wm_border_unfocused;
 
 //WM Buttons
 
 // Close
-$wm_button_close_bg: #00ff00;
-$wm_button_close_hover_bg: #00ff00;
-$wm_button_close_active_bg: #00ff00;
+$wm_button_close_bg: #35A854;
+$wm_button_close_hover_bg: darken(#35A854, 10%);
+$wm_button_close_active_bg: #35A854;
 
-$wm_icon_close_bg: #00ff00;
+$wm_icon_close_bg: #35A854;
 
 // Minimize, Maximize
-$wm_button_hover_bg: #00ff00;
-$wm_button_active_bg: #00ff00;
+$wm_button_hover_bg: #35A854;
+$wm_button_active_bg: darken(#35A854, 10%);
 
-$wm_icon_bg: #00ff00;
-$wm_icon_unfocused_bg: #00ff00;
-$wm_icon_hover_bg: #00ff00;
-$wm_icon_active_bg: #00ff00;
+$wm_icon_bg: #35A854;
+$wm_icon_unfocused_bg: #5C6370;
+$wm_icon_hover_bg: #35A854;
+$wm_icon_active_bg: darken(#35A854, 10%);
 
 // Terminal color
-$terminal_bg: #00ff00;
+$terminal_bg: #ff0000;
