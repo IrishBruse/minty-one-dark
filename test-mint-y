@@ -5,6 +5,9 @@ CURDIR=`pwd`
 cd src/Mint-Y
 ./build-themes.py
 
+pysassc ./gtk-3.0/sass/gtk.scss ./gtk-3.0/gtk.css
+pysassc ./gtk-3.0/sass/gtk-dark.scss ./gtk-3.0/gtk-dark.css
+
 cd $CURDIR
 
 sudo rm -rf ~/.themes/OneDark

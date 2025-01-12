@@ -578,9 +578,13 @@ StScrollBar {
 .window-border {
   border: 3px $accent_color;
   border-radius: 2px;
-  background-color: rgba(255,255,255,.05);
+  background-color: rgb(255,0,255);
   /* Cover rounded corners and some bad adjustment gaps */
   box-shadow: 0 0 0 1px $accent_color inset;
+}
+
+.window-frame {
+  border: 1px solid #ff0000; /* Change to your desired color */
 }
 
 .overview-empty-placeholder {

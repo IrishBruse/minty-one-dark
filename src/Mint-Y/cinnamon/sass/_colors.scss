@@ -26,8 +26,8 @@ $bg_color: $od-bg-l; // Taskbar top border
 // Tray Icons Hover Background and app item focus
 // cinnamenu scroll and hover bg
 $bg_color2: transparentize($od-accent, 0.8);
-$bg_color3: #123456; // Scrollbar color
-$bg_color4: #ff0;
+$bg_color3: transparentize($od-accent, 0.8); // power options background
+$bg_color4: #ff00ff;
 
 // Borders and separators
 $borders_color: $border;
@@ -51,26 +51,26 @@ $insensitive_fg_color: transparentize($text, 0.3);
 
 $tooltip_bg_color: #20252B;
 $tooltip_fg_color: $text;
-$tooltip_border_color: #f0f;
+$tooltip_border_color: #0000ff;
 
-$osd_fg_color: #ff00ff;
-$osd_bg_color: #ff00ff;
+$osd_fg_color: #0000ff;
+$osd_bg_color: #0000ff;
 
-$osd_button_bg: #ff00ff;
-$osd_button_border: #ff00ff;
+$osd_button_bg: #0000ff;
+$osd_button_border: #0000ff;
 
-$osd_entry_bg: #ff00ff;
-$osd_entry_border: #ff00ff;
+$osd_entry_bg: #0000ff;
+$osd_entry_border: #0000ff;
 
-$osd_insensitive_fg_color: #ff00ff;
+$osd_insensitive_fg_color: #0000ff;
 
 $entry_bg: $panel_bg;
 $entry_border: $border;
 
-$button_bg: #ff00ff;
-$button_border: #f0f;
+$button_bg: #0000ff;
+$button_border: #0000ff;
 
-$applet_separator_color: #ff00ff;
+$applet_separator_color: #0000ff;
 
-$corner_bar_unhighlighted: #ff00ff;
-$corner_bar_highlighted: #ff00ff;
+$corner_bar_unhighlighted: #0000ff;
+$corner_bar_highlighted: #0000ff;
